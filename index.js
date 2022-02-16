@@ -29,7 +29,8 @@ const dishImage = document.getElementById('dish-image')
 const dishName = document.getElementById('dish-name')
 const dishDescription = document.getElementById('dish-description')
 const dishPrice = document.getElementById('dish-price')
-// console.log(dishImage, dishName, dishDescription, dishPrice)
+const numberInCart = document.getElementById('number-in-cart')
+// console.log(dishImage, dishName, dishDescription, dishPrice, numberInCart)
 
 let currentMenuItem;
 function createDishSection(item){
@@ -39,11 +40,11 @@ function createDishSection(item){
     dishName.textContent = item.name
     dishDescription.textContent = item.description
     dishPrice.textContent = item.price
+    numberInCart.textContent =item.number_in_bag
 }
 
 let cartForm = document.getElementById('cart-form')
-let numberInCart = document.getElementById('number-in-cart')
-// console.log(numberInCart)
+// console.log(cartForm)
 function createCartForm(){
     cartForm.addEventListener('submit', (e)=>{
         e.preventDefault()
