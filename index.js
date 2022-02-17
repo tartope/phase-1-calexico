@@ -44,14 +44,19 @@ function createDishSection(item){
 }
 
 let cartForm = document.getElementById('cart-form')
-// console.log(cartForm)
+let totalCostInCart = document.getElementById('total-cost-in-cart')
+// console.log(cartForm, totalCostInCart)
 function createCartForm(){
     cartForm.addEventListener('submit', (e)=>{
         e.preventDefault()
         // console.log('submit')
         let addMenuItem = e.target['cart-amount'].value
+        
         currentMenuItem.number_in_bag += parseInt(addMenuItem)
         numberInCart.textContent = currentMenuItem.number_in_bag
+
+        totalCostInCart.textContent = parseInt(currentMenuItem.number_in_bag * currentMenuItem.price)
+
         e.target.reset()
     })
 }
